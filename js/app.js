@@ -217,6 +217,22 @@ formularioEdicionJuego.addEventListener("submit", (dato) => {
 
 
 
+// Pagina Principal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
