@@ -3,6 +3,11 @@
 
 const juegoDestacadoUI = document.getElementById("juegoDestacado")
 const cardsDeportesUI = document.getElementById("cardsDeportes")
+const cardsAventuraUI = document.getElementById("cardsAventura")
+const cardsDisparosUI = document.getElementById("cardsDisparos")
+const cardsEstrategiaUI = document.getElementById("cardsEstrategia")
+const cardsVariosUI = document.getElementById("cardsVarios")
+
 
 
 // Pagina Principal
@@ -47,6 +52,7 @@ const cargarTarjetasDeportes = () => {
     
     let acumulador = ""
     for (const juego of juegos){
+        if (juego.categoria=="Deportes" && juego.publicar == "-check"){
         acumulador +=    
             `<div class="col-12 col-md-3">
                 <div class="card p-1" style="width: 18rem;">
@@ -56,14 +62,96 @@ const cargarTarjetasDeportes = () => {
                 
                 </div>
             </div>`
+        }
     }
     cardsDeportesUI.innerHTML = acumulador;
 
-
-
+}
+const cargarTarjetasAventura = () => {
+    const juegos = JSON.parse(localStorage.getItem('juegos')) || [];
+        
     
+    let acumulador = ""
+    for (const juego of juegos){
+        if (juego.categoria=="Aventura" && juego.publicar == "-check"){
+        acumulador +=    
+            `<div class="col-12 col-md-3">
+                <div class="card p-1" style="width: 18rem;">
+                <a href="./pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')">
+                    <img src="${juego.urlImagen}" class="card-img-top" alt="${juego.titulo}">
+                </a>
+                
+                </div>
+            </div>`
+        }
+    }
+    cardsAventuraUI.innerHTML = acumulador;
 
+}
 
+const cargarTarjetasDisparos = () => {
+    const juegos = JSON.parse(localStorage.getItem('juegos')) || [];
+        
+    
+    let acumulador = ""
+    for (const juego of juegos){
+        if (juego.categoria=="Disparos" && juego.publicar == "-check"){
+        acumulador +=    
+            `<div class="col-12 col-md-3">
+                <div class="card p-1" style="width: 18rem;">
+                <a href="./pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')">
+                    <img src="${juego.urlImagen}" class="card-img-top" alt="${juego.titulo}">
+                </a>
+                
+                </div>
+            </div>`
+        }
+    }
+    cardsDisparosUI.innerHTML = acumulador;
+
+}
+ 
+const cargarTarjetasEstrategia = () => {
+    const juegos = JSON.parse(localStorage.getItem('juegos')) || [];
+        
+    
+    let acumulador = ""
+    for (const juego of juegos){
+        if (juego.categoria=="Estrategia" && juego.publicar == "-check"){
+        acumulador +=    
+            `<div class="col-12 col-md-3">
+                <div class="card p-1" style="width: 18rem;">
+                <a href="./pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')">
+                    <img src="${juego.urlImagen}" class="card-img-top" alt="${juego.titulo}">
+                </a>
+                
+                </div>
+            </div>`
+        }
+    }
+    cardsEstrategiaUI.innerHTML = acumulador;
+
+}
+
+const cargarTarjetasVarios = () => {
+    const juegos = JSON.parse(localStorage.getItem('juegos')) || [];
+        
+    
+    let acumulador = ""
+    for (const juego of juegos){
+        if (juego.categoria=="Varios" && juego.publicar == "-check"){
+        acumulador +=    
+            `<div class="col-12 col-md-3">
+                <div class="card p-1" style="width: 18rem;">
+                <a href="./pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')">
+                    <img src="${juego.urlImagen}" class="card-img-top" alt="${juego.titulo}">
+                </a>
+                
+                </div>
+            </div>`
+        }
+    }
+    cardsVariosUI.innerHTML = acumulador;
 
 }
  
