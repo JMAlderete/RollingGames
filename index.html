@@ -14,7 +14,7 @@
 
   </head>
 
-  <body onload="mostrarDestacado()">
+  <body onload="mostrarDestacado(); mostrarCarruselDeportes()">
     <header>
 
 
@@ -24,8 +24,10 @@
         <!-- Juego Destacado -->
         <section>
             <div class="container">
+                
                 <div class="row" id="juegoDestacado">
-                                
+                    <!-- <a href="pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')" class="btn btn-primary"> VER MAS...</a> -->
+
                 </div>
             
             </div>
@@ -43,65 +45,20 @@
                 <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner" role="listbox">
 
-                        <div class="carousel-item active">
+                        <div class="carousel-item active" id="juegoCarrusel">
                             <div class="col-md-3">
                                 <div class="card">
                                     <div class="card-img">
-                                        <img src="./img/deportes.png" class="img-fluid">
+                                        <img src="" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
 
                        
 
-                        <div class="carousel-item" id="juegoCarrusel">
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-img">
-                                        <img src="https://assets.2k.com/1a6ngf98576c/6ATYjOLFuAjwwCQmbFGHwz/fe66145cdf03be39cadb0628ad591531/PGA23-WEBSITE-SKU-TIGERWOODS_KA.png" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-img">
-                                        <img src="https://cdn.beahero.gg/2021/01/eSports-Boxing-Club.jpg" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-img">
-                                        <img src="https://www.infobae.com/new-resizer/w3NiNhxjJ3r77jX61SnmtG5tWbQ=/1200x900/filters:format(webp):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/E7WXCNCRYFDO7HUYBWCCGWWD6Q.jpg" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-img">
-                                        <img src="https://elukelele.com/wp-content/uploads/2022/08/Lanzamiento-de-eFootball-2023-Para-iniciar-la-nueva-temporada-Konami-pone-en-marcha-un-Dream-Team-2.jpg" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-img">
-                                        <img src="https://static1-es.millenium.gg/articles/6/46/09/6/@/244367-screenshot-69-orig-1-article_cover_bd-1.png
-                                        " class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                     <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

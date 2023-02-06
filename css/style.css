@@ -14,14 +14,14 @@ header {
 }
 
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
     .carousel-inner .carousel-item > div {
         display: none;
     }
     .carousel-inner .carousel-item > div:first-child {
         display: block;
     }
-}
+} */
 
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,

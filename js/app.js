@@ -26,7 +26,7 @@ let juegoDestacado = ""
 // GLOBALES de Pagina Principal
 
 const juegoDestacadoUI = document.getElementById("juegoDestacado")
-
+const carruselDeportesUI = document.getElementById("juegoCarrusel")
 
 
 // Pagina Principal
@@ -67,7 +67,7 @@ const mostrarDestacado = () =>{
                     <li>Categoría: ${juego.categoria}</li>
                     <li>Descrición: ${juego.descripcionCorta}</li>
                     <br>
-                    <button class="btn btn-primary">Ver Mas...</button>
+                    <a href="pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')" class="btn btn-primary"> VER MAS...</a>
                 </ul>
                 
             </div>
@@ -82,6 +82,27 @@ const mostrarDestacado = () =>{
 
 }
 
+
+const mostrarCarruselDeportes = () => {
+    const juegos = JSON.parse(localStorage.getItem('juegos')) || [];
+    
+
+    let acumulador1 = '';
+    for (const juego of juegos) {
+        acumulador1 +=  
+
+        `<div class="col-md-3">
+            <div class="card">
+                <div class="card-img">
+                    <img src="${juego.urlImagen}" class="img-fluid" alt="${juego.titulo}">
+                </div>
+            </div>
+        </div>`
+    }
+    carruselDeportesUI.innerHTML = acumulador1;
+
+
+}
  
 
 
