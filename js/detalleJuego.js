@@ -28,7 +28,7 @@ const detalleJuegoUI = document.getElementById("detalleJuego")
                     <li>Categoría: ${juego.categoria}</li>
                     <li>${juego.descripcionLarga}</li>
                     <br>
-                    <button class="btn btn-success">COMPRAR</button>
+                    <a href="error404.html" class="btn btn-success">Comprar</a>
                 </ul>
                 
         </div>`
