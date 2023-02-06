@@ -6,7 +6,8 @@ const detalleJuegoUI = document.getElementById("detalleJuego")
 
 // Detalle de Juego
 
-const redirigirDetalle = (id) =>{
+    let id = document.location.search.split("=")[1]
+    console.log(id)
 
     const juegos = JSON.parse(localStorage.getItem('juegos')) || [];
     const juego = juegos.find((juego) => juego.id === id);
@@ -31,7 +32,7 @@ const redirigirDetalle = (id) =>{
                 </ul>
                 
         </div>`
-
     detalleJuegoUI.innerHTML = detalle;
-}
+
+
 

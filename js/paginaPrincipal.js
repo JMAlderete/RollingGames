@@ -30,7 +30,7 @@ const mostrarDestacado = () =>{
                     <li>Categoría: ${juego.categoria}</li>
                     <li>Descripción: ${juego.descripcionCorta}</li>
                     <br>
-                    <a href="pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')" class="btn btn-primary"> VER MAS...</a>
+                    <a href="pages/detalleJuego.html?id=${juego.id}" class="btn btn-primary"> VER MAS...</a>
                 </ul>
                 
             </div>
@@ -56,7 +56,7 @@ const cargarTarjetasDeportes = () => {
         acumulador +=    
             `<div class="col-12 col-md-3">
                 <div class="card p-1" style="width: 18rem;">
-                <a href="./pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')">
+                <a href="pages/detalleJuego.html?id=${juego.id}" >
                     <img src="${juego.urlImagen}" class="card-img-top" alt="${juego.titulo}">
                 </a>
                 
@@ -77,7 +77,7 @@ const cargarTarjetasAventura = () => {
         acumulador +=    
             `<div class="col-12 col-md-3">
                 <div class="card p-1" style="width: 18rem;">
-                <a href="./pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')">
+                <a href="pages/detalleJuego.html?id=${juego.id}">
                     <img src="${juego.urlImagen}" class="card-img-top" alt="${juego.titulo}">
                 </a>
                 
@@ -99,7 +99,7 @@ const cargarTarjetasDisparos = () => {
         acumulador +=    
             `<div class="col-12 col-md-3">
                 <div class="card p-1" style="width: 18rem;">
-                <a href="./pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')">
+                <a href="pages/detalleJuego.html?id=${juego.id}" >
                     <img src="${juego.urlImagen}" class="card-img-top" alt="${juego.titulo}">
                 </a>
                 
@@ -121,7 +121,7 @@ const cargarTarjetasEstrategia = () => {
         acumulador +=    
             `<div class="col-12 col-md-3">
                 <div class="card p-1" style="width: 18rem;">
-                <a href="./pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')">
+                <a href="pages/detalleJuego.html?id=${juego.id}" >
                     <img src="${juego.urlImagen}" class="card-img-top" alt="${juego.titulo}">
                 </a>
                 
@@ -143,7 +143,7 @@ const cargarTarjetasVarios = () => {
         acumulador +=    
             `<div class="col-12 col-md-3">
                 <div class="card p-1" style="width: 18rem;">
-                <a href="./pages/detalleJuego.html" onclick="redirigirDetalle('${juego.id}')">
+                <a href="pages/detalleJuego.html?id=${juego.id}" >
                     <img src="${juego.urlImagen}" class="card-img-top" alt="${juego.titulo}">
                 </a>
                 
