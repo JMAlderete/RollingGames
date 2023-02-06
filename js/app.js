@@ -1,4 +1,7 @@
-// GLOBALES
+
+
+
+// GLOBALES de Pagina Admin
 
 const formularioCreacionJuego = document.getElementById('formularioCreacionJuego');
 const tablaDeJuegos = document.getElementById('tablaDeJuegos')
@@ -20,7 +23,76 @@ let juegoPublicado = ""
 let juegoDestacado = ""
 
 
-// FUNCIONES
+// GLOBALES de Pagina Principal
+
+const juegoDestacadoUI = document.getElementById("juegoDestacado")
+
+
+
+// Pagina Principal
+
+// Carrusel
+
+let items = document.querySelectorAll('.carousel .carousel-item')
+
+		items.forEach((el) => {
+			const minPerSlide = 4
+			let next = el.nextElementSibling
+			for (var i=1; i<minPerSlide; i++) {
+				if (!next) {
+            // wrap carousel by using first child
+            next = items[0]
+        }
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+
+
+//  Juego Destacado
+
+const mostrarDestacado = () =>{
+    const juegos = JSON.parse(localStorage.getItem('juegos')) || [];
+    const juego = juegos.find((juego) => juego.destacar === "solid");
+    console.log(juego)
+    let destacado = `
+    
+        <div class="col-12 col-md-12 col-sm-12 mt-4"><h2>Juego Destacado del día: ${juego.titulo}</h2>
+            </div>
+            <hr class="mt-2" />
+            <div class="col-12 col-md-5 ">
+                <h4>${juego.titulo}</h4>
+                <ul>
+                    <li>Categoría: ${juego.categoria}</li>
+                    <li>Descrición: ${juego.descripcionCorta}</li>
+                    <br>
+                    <button class="btn btn-primary">Ver Mas...</button>
+                </ul>
+                
+            </div>
+
+            <div class="col-12 col-md-7">
+                <img class="img-fluid" src="${juego.urlImagen}" alt="${juego.titulo}">
+        </div>`
+        
+
+    juegoDestacadoUI.innerHTML = destacado;
+
+
+}
+
+ 
+
+
+
+
+
+
+
+
+// Pagina Administrador de Juegos
+
 
 const generadorDeID = function () {
     return '_' + Math.random().toString(36).substr(2, 9);
@@ -217,14 +289,6 @@ formularioEdicionJuego.addEventListener("submit", (dato) => {
 
 
 
-// Pagina Principal
-
-
-
-
-
-
-
 
 
 
@@ -264,21 +328,21 @@ const mostrarDetalleJuego = (juegos) => {
 
 
 
-`<div class="col-12 col-md-12 col-sm-12 mt-4"><h2>Titulo del Juego</h2>
-</div>
-<hr class="mt-2" />
+// `<div class="col-12 col-md-12 col-sm-12 mt-4"><h2>Titulo del Juego</h2>
+// </div>
+// <hr class="mt-2" />
 
-<div class="col-12 col-md-7">
-    <img class="img-fluid" src="http://media.steampowered.com/apps/csgo/blog/images/fb_image.png?v=6" alt="CS GO">
-</div>
+// <div class="col-12 col-md-7">
+//     <img class="img-fluid" src="http://media.steampowered.com/apps/csgo/blog/images/fb_image.png?v=6" alt="CS GO">
+// </div>
 
-<div class="col-12 col-md-5 ">
-    <h4>Nombre Juego</h4>
-    <ul>
-        <li>Categoría: Disparosssss</li>
-        <li>Descrición: Disparos entre equipos policia y terroristas Disparos entre equipos policia y terroristasDisparos entre equipos policia y terroristasDisparos entre equipos policia y terroristas</li>
-        <br>
-        <button class="btn btn-success">COMPRAR</button>
-    </ul>
+// <div class="col-12 col-md-5 ">
+//     <h4>Nombre Juego</h4>
+//     <ul>
+//         <li>Categoría: Disparosssss</li>
+//         <li>Descrición: Disparos entre equipos policia y terroristas Disparos entre equipos policia y terroristasDisparos entre equipos policia y terroristasDisparos entre equipos policia y terroristas</li>
+//         <br>
+//         <button class="btn btn-success">COMPRAR</button>
+//     </ul>
     
-</div>`
+// </div>`
